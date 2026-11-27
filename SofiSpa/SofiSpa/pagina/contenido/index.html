@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SofiSpa: servicios de manicure, pedicure, coloración de cabello y pigmentación.">
+  <meta name="theme-color" content="#f8e7eb">
+  <title>SofiSpa | Belleza y cuidado personal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../diseño/styles.css">
+  <script src="../contenido/servicios.js" defer></script>
+  <script src="../contenido/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
+
+  <header class="site-header" id="header">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="SofiSpa, ir al inicio">
+        <img class="brand-logo" src="../src/img/portada/logo.jpeg" alt="Logo de SofiSpa">
+        <span class="brand-name">SofiSpa</span>
+        <span class="brand-tagline">BELLEZA · CUIDADO · ESTILO</span>
+      </a>
+
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#inicio" data-page-link="inicio">Inicio</a></li>
+        <li><a href="#servicios" data-page-link="servicios">Servicios</a></li>
+        <li><a href="#galeria" data-page-link="galeria">Galería</a></li>
+        <li><a href="#resenas" data-page-link="resenas">Reseñas</a></li>
+        <li><a href="#sobre-sofi" data-page-link="sobre-sofi">Sobre Sofi</a></li>
+        <li><a href="#preguntas" data-page-link="preguntas">Preguntas frecuentes</a></li>
+        <li><a href="#contacto" data-page-link="contacto"><span class="nav-two-line">Horario<br>y ubicación</span></a></li>
+      </ul>
+
+      <a class="header-cart" href="#mi-cita" data-page-link="mi-cita" aria-label="Ver mi cita">
+        <span class="cart-icon" aria-hidden="true">♡</span>
+        <span>Mi cita</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <main id="contenido-principal">
+    <!-- INICIO: cambia portada/portada-1.jpg por una fotografía tuya. -->
+    <section class="hero page-view is-active" id="inicio" data-page-view="inicio">
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <p class="eyebrow hero-eyebrow">UN MOMENTO PARA TI</p>
+          <h1>Tu belleza merece<br><em>un momento especial.</em></h1>
+          <p class="hero-description">Un espacio dedicado al cuidado personal, la belleza y esos pequeños detalles que te hacen sentir única.</p>
+          <a class="button button-light" href="#servicios" data-page-link="servicios">Conocer nuestros servicios <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-video-frame">
+          <video class="hero-video" autoplay muted loop playsinline poster="../src/img/portada/portada-1.jpg" aria-label="Video de presentación de SofiSpa">
+            <source src="../src/video/suaza presentacion.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+      </div>
+      <div class="hero-note"><span></span> Belleza · Cuidado · Bienestar</div>
+    </section>
+
+    <section class="welcome section-space page-view is-active" data-page-view="inicio">
+      <div class="container welcome-inner">
+        <p class="eyebrow">BIENVENIDA A SOFISPA</p>
+        <h2>Un espacio para <em>sentirte bien</em></h2>
+        <p>Queremos acompañarte a encontrar ese estilo que habla de ti. Explora nuestros servicios, elige tus favoritos y prepara tu solicitud de cita en un solo lugar.</p>
+      </div>
+    </section>
+
+    <!-- CATÁLOGO: las categorías y servicios se generan desde servicios.js -->
+    <section class="services-section section-space page-view" id="servicios" data-page-view="servicios">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">NUESTROS SERVICIOS</p>
+          <h2>Encuentra tu próximo <em>favorito</em></h2>
+          <p>Explora cada categoría, revisa los diseños y agrega uno o varios servicios a tu cita.</p>
+        </div>
+
+        <div class="category-tabs" id="category-tabs" aria-label="Categorías del catálogo">
+          <button class="category-tab is-active" type="button" data-category="todos">Todos</button>
+          <button class="category-tab" type="button" data-category="manicure">Manos</button>
+          <button class="category-tab" type="button" data-category="pedicure">Pies</button>
+          <button class="category-tab" type="button" data-category="cabello">Cabello</button>
+          <button class="category-tab" type="button" data-category="cejas">Cejas</button>
+          <button class="category-tab" type="button" data-category="labios">Labios</button>
+        </div>
+
+        <div class="catalog-grid" id="catalog-grid" aria-live="polite"></div>
+        <p class="catalog-note">Los precios y la disponibilidad pueden variar según el diseño, largo, cantidad de producto o valoración previa. Sofi confirmará los detalles por WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- CARRITO / SOLICITUD MULTISERVICIO -->
+    <section class="appointment-section section-space page-view" id="mi-cita" data-page-view="mi-cita">
+      <div class="container appointment-layout">
+        <div class="appointment-intro">
+          <p class="eyebrow">TU EXPERIENCIA SOFISPA</p>
+          <h2>Arma tu cita <em>a tu manera</em></h2>
+          <p>¿Quieres manicure, pedicure y un cambio de look? Agrega todos los servicios que quieras. Puedes combinar categorías y enviar una sola solicitud.</p>
+          <div class="appointment-benefit"><span>♡</span> Una sola solicitud para todos tus servicios.</div>
+          <div class="appointment-benefit"><span>♡</span> Incluye las imágenes de referencia que elegiste.</div>
+          <div class="appointment-benefit"><span>♡</span> Sofi confirma disponibilidad y precio final.</div>
+        </div>
+
+        <div class="appointment-card">
+          <div class="appointment-card-heading">
+            <div>
+              <p class="eyebrow">RESUMEN</p>
+              <h3>Mi selección <span id="selection-count">(0)</span></h3>
+            </div>
+            <button class="button button-outline button-clear" id="clear-cart" type="button">Vaciar</button>
+          </div>
+          <div class="cart-items" id="cart-items">
+            <div class="empty-cart">
+              <span class="empty-cart-icon">♡</span>
+              <p>Aún no has agregado servicios.</p>
+              <small>Explora el catálogo y selecciona tus favoritos.</small>
+            </div>
+          </div>
+          <div class="cart-total">
+            <span>Total estimado</span>
+            <strong id="cart-total">$0</strong>
+          </div>
+
+          <form class="booking-form" id="booking-form">
+            <div class="form-field">
+              <label for="customer-name">Tu nombre</label>
+              <input id="customer-name" name="customerName" type="text" placeholder="¿Cómo te llamas?" required maxlength="60">
+            </div>
+            <div class="form-field">
+              <label for="service-mode">Modalidad de atención</label>
+              <select id="service-mode" name="serviceMode" required>
+                <option value="En el establecimiento">En el establecimiento</option>
+                <option value="A domicilio">A domicilio</option>
+              </select>
+            </div>
+            <div class="form-field" id="address-field" hidden>
+              <label for="customer-address">Dirección para el domicilio</label>
+              <input id="customer-address" name="customerAddress" type="text" placeholder="Barrio, dirección y referencias" maxlength="180">
+            </div>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="preferred-date">Fecha preferida</label>
+                <input id="preferred-date" name="preferredDate" type="date">
+              </div>
+              <div class="form-field">
+                <label for="preferred-time">Hora preferida</label>
+                <input id="preferred-time" name="preferredTime" type="time">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="booking-notes">Comentario adicional (opcional)</label>
+              <textarea id="booking-notes" name="notes" rows="3" placeholder="Cuéntanos algún detalle que debamos saber..."></textarea>
+            </div>
+            <button class="button button-primary button-full" type="submit">
+              <span aria-hidden="true">◉</span> Enviar solicitud por WhatsApp
+            </button>
+            <p class="form-disclaimer">Esta es una solicitud de cita, no una reserva confirmada. Sofi se comunicará contigo para confirmar disponibilidad, duración y precio final.</p>
+            <p class="form-feedback" id="form-feedback" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA: reemplaza las referencias por fotografías reales de trabajos. -->
+    <section class="gallery-section section-space page-view" id="galeria" data-page-view="galeria">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">INSPIRACIÓN Y DETALLES</p>
+          <h2>Un vistazo a <em>nuestro trabajo</em></h2>
+          <p>Algunas ideas para inspirarte. Las fotografías reales de Sofi se agregarán aquí.</p>
+        </div>
+        <div class="gallery-filters" id="gallery-filters">
+          <button class="gallery-filter is-active" type="button" data-filter="todos">Todos</button>
+          <button class="gallery-filter" type="button" data-filter="manicure">Manos</button>
+          <button class="gallery-filter" type="button" data-filter="pedicure">Pies</button>
+          <button class="gallery-filter" type="button" data-filter="cabello">Cabello</button>
+          <button class="gallery-filter" type="button" data-filter="cejas">Cejas</button>
+          <button class="gallery-filter" type="button" data-filter="labios">Labios</button>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- RESEÑAS: son textos de ejemplo hasta que Sofi tenga opiniones reales. -->
+    <section class="reviews-section section-space page-view" id="resenas" data-page-view="resenas">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">EXPERIENCIAS</p>
+          <h2>Palabras que nos <em>inspiran</em></h2>
+          <p>La confianza y satisfacción de cada cliente son lo más importante.</p>
+        </div>
+        <div class="reviews-grid" id="reviews-grid"></div>
+        <p class="catalog-note">Los testimonios publicados deben ser opiniones reales y contar con autorización de sus autores.</p>
+      </div>
+    </section>
+
+    <!-- SOBRE SOFI -->
+    <section class="about-section section-space page-view" id="sobre-sofi" data-page-view="sobre-sofi">
+      <div class="container about-layout">
+        <div class="about-photo-wrap">
+          <div class="about-carousel" id="about-carousel" aria-label="Carrusel de fotografías de Sofi">
+            <img class="about-slide is-active" src="../src/img/sofi/logo.jpeg" alt="Fotografía de Sofi, imagen 1">
+            <img class="about-slide" src="../src/img/sofi/logo.jpeg" alt="Fotografía de Sofi, imagen 2">
+            <img class="about-slide" src="../src/img/sofi/logo.jpeg" alt="Fotografía de Sofi, imagen 3">
+            <div class="about-carousel-controls">
+              <button type="button" id="about-prev" aria-label="Fotografía anterior">‹</button>
+              <span id="about-slide-count">1 / 3</span>
+              <button type="button" id="about-next" aria-label="Fotografía siguiente">›</button>
+            </div>
+          </div>
+          <span class="about-photo-caption">Con cariño, Sofi ♡</span>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">UN POCO SOBRE MÍ</p>
+          <h2>Hola, soy <em>Sofi</em></h2>
+          <p>Te doy la bienvenida a mi espacio de belleza y cuidado personal. Mi propósito es que cada visita sea una experiencia agradable, cercana y pensada en ti.</p>
+          <p class="about-placeholder">La mas dura de todo neiva, espécialista en mi trabajo</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO: horarios y ubicación. Configura la dirección exacta en script.js -->
+    <section class="contact-section section-space page-view" id="contacto" data-page-view="contacto">
+      <div class="container contact-layout">
+        <div>
+          <p class="eyebrow">VISÍTANOS</p>
+          <h2>Te esperamos en <em>SofiSpa</em></h2>
+          <p>Consulta nuestros horarios y encuentra fácilmente cómo llegar.</p>
+        </div>
+        <div class="contact-details">
+          <div class="contact-detail"><span>◷</span><div><strong>Horarios de atención</strong><p id="business-hours">Lunes a sábado · Horario por confirmar</p></div></div>
+          <div class="contact-detail"><span>⌖</span><div><strong>Ubicación</strong><p id="business-address">Dirección por confirmar</p></div></div>
+          <a class="button button-light" id="maps-link" href="#" target="_blank" rel="noopener" hidden>Cómo llegar en Google Maps ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="faq-section section-space page-view" id="preguntas" data-page-view="preguntas">
+      <div class="container faq-container">
+        <div class="section-heading">
+          <p class="eyebrow">TE AYUDAMOS</p>
+          <h2>Preguntas <em>frecuentes</em></h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#inicio">
+        <img class="brand-logo" src="../src/img/sofi/logo.jpeg" alt="Logo de SofiSpa">
+        <span class="brand-name">SofiSpa</span>
+        <span class="brand-tagline">BELLEZA · CUIDADO · ESTILO</span>
+      </a>
+      <p>Un momento para ti. ♡</p>
+      <div class="footer-links">
+        <a href="#servicios" data-page-link="servicios">Servicios</a>
+        <a href="#galeria" data-page-link="galeria">Galería</a>
+        <a href="#sobre-sofi" data-page-link="sobre-sofi">Sobre Sofi</a>
+        <a href="#contacto" data-page-link="contacto">Horario y ubicación</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="current-year"></span> SofiSpa. Todos los derechos reservados.</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- ACCESOS FLOTANTES: reemplazar enlaces en script.js -->
+  <div class="floating-socials" aria-label="Redes sociales">
+    <a class="social-button social-whatsapp" id="floating-whatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
+    <a class="social-button social-instagram" id="floating-instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+    <a class="social-button social-facebook" id="floating-facebook" href="#" target="_blank" rel="noopener" aria-label="Facebook"><span aria-hidden="true">f</span></a>
+    <a class="social-button social-tiktok" id="floating-tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok"><span aria-hidden="true">♪</span></a>
+  </div>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver arriba">↑</button>
+</body>
+</html>

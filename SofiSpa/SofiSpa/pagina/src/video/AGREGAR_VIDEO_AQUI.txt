@@ -1,0 +1,2 @@
+Coloca aquí el video de portada con este nombre exacto: sofispa-portada.mp4
+El video aparece a la derecha del texto en escritorio y debajo del texto en móviles.
